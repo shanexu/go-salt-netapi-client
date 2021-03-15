@@ -1,4 +1,4 @@
-module github.com/finarfin/go-salt-netapi-client
+module github.com/shanexu/go-salt-netapi-client
 
 go 1.13
 
