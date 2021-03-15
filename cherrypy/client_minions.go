@@ -37,7 +37,7 @@ type submitMinionJob struct {
 	Target      interface{}            `json:"tgt"`
 	TargetType  TargetType             `json:"tgt_type"`
 	Function    string                 `json:"fun"`
-	Arguments   []interface{}          `json:"args,omitempty"`
+	Arguments   []interface{}          `json:"arg,omitempty"`
 	KWArguments map[string]interface{} `json:"kwargs,omitempty"`
 }
 
