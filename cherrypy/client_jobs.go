@@ -87,8 +87,13 @@ func (c *Client) Job(ctx context.Context, id string) (*JobDetails, error) {
 	job.Function = j.Function
 	job.StartTime = j.StartTime.Time
 	job.User = j.User
-	job.Arguments, job.KWArguments = parseArgs(j.Arguments)
-	job.Target = parseTarget(j)
+	if len(j.Arguments) > 0{
+		job.Arguments, job.KWArguments = parseArgs(j.Arguments)
+	}
+	targetString,ok := j.Target.(string)
+	if !(ok && targetString == "unknown-target"){
+		job.Target = parseTarget(j)
+	}
 
 	return &job, nil
 }
